@@ -1,0 +1,17 @@
+<div>
+
+  <h1>BrewBox Brewery</h1>
+
+  <ul>
+    <li ng-repeat="b in beers">
+      <a href ng-click="details(b)">{{b}}</a>
+    </li>
+  </ul>
+
+  <div ng-if="beer">
+    <h2>{{beer.name}}</h2>
+    <div>{{beer.ibu}} IBU<br/>{{beer.alc}} Alc. Vol.</div>
+    <img ng-src="{{beer.bottle}}"/>
+  </div>
+
+</div>
