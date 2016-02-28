@@ -1,20 +1,21 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="MyApp">
   <head>
     <title>Let's play with AngularJS!</title>
     <script 
       type="text/javascript" 
       src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js">
     </script>
+    <script type="text/javascript" src="index.js"></script>
   </head>
-  <body>
+  <body ng-controller="ToggleController as vm">
 
-    <button ng-click="enabled = !enabled">
+    <button ng-click="vm.toggle()">
       Click me!
     </button>
     
     <h1>
-      {{enabled ? "on" : "off"}}
+      {{ vm.getStatus() }}
     </h1>
 
     <input type="range" min="0" max="100" ng-model="rangeValue"/>
