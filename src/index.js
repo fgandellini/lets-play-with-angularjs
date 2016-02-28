@@ -1,27 +1,37 @@
 var MyApp = angular.module('MyApp', []);
 
-MyApp.controller('ToggleController', function() {
-  var vm = this;
+MyApp.controller('ToggleController', function($scope) {
+  $scope.enabled = false;
 
-  vm.enabled = false;
-
-  vm.toggle = function() {
-    vm.enabled = !vm.enabled;
+  $scope.toggle = function() {
+    $scope.enabled = !$scope.enabled;
   };
 
-  vm.getStatus = function() {
-    return vm.enabled ? 'on' : 'off';
+  $scope.getStatus = function() {
+    return $scope.enabled ? 'on' : 'off';
   };
 
 });
 
-MyApp.controller('RangeController', function() {
-  var vm = this;
+MyApp.directive('myToggle', function() {
+  return {
+    templateUrl: 'mytoggle-template.html',
+    controller: 'ToggleController'
+  };
+});
 
-  vm.rangeValue = 0;
+MyApp.controller('RangeController', function($scope) {
+  $scope.rangeValue = 0;
 
-  vm.checkUndefined = function() {
-    vm.rangeValue = vm.rangeValue || 0;
+  $scope.checkUndefined = function() {
+    $scope.rangeValue = $scope.rangeValue || 0;
   };
 
+});
+
+MyApp.directive('myRange', function() {
+  return {
+    templateUrl: 'myrange-template.html',
+    controller: 'RangeController'
+  };
 });

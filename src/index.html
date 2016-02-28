@@ -8,20 +8,11 @@
     </script>
     <script type="text/javascript" src="index.js"></script>
   </head>
-  <body ng-controller="ToggleController as vm">
+  <body>
 
-    <button ng-click="vm.toggle()">
-      Click me!
-    </button>
-    
-    <h1>
-      {{ vm.getStatus() }}
-    </h1>
+    <my-toggle></my-toggle>
 
-    <div ng-controller="RangeController as vm">
-      <input type="range" min="0" max="100" ng-model="vm.rangeValue"/>
-      <input type="text" ng-model="vm.rangeValue" ng-change="vm.checkUndefined()"/>
-    </div>
+    <my-range></my-range>
 
   </body>
 </html>
