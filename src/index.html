@@ -18,8 +18,10 @@
       {{ vm.getStatus() }}
     </h1>
 
-    <input type="range" min="0" max="100" ng-model="rangeValue"/>
-    <input type="text" ng-model="rangeValue"/>
+    <div ng-controller="RangeController as vm">
+      <input type="range" min="0" max="100" ng-model="vm.rangeValue"/>
+      <input type="text" ng-model="vm.rangeValue" ng-change="vm.checkUndefined()"/>
+    </div>
 
   </body>
 </html>

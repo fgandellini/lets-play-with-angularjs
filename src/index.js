@@ -14,3 +14,14 @@ MyApp.controller('ToggleController', function() {
   };
 
 });
+
+MyApp.controller('RangeController', function() {
+  var vm = this;
+
+  vm.rangeValue = 0;
+
+  vm.checkUndefined = function() {
+    vm.rangeValue = vm.rangeValue || 0;
+  };
+
+});
