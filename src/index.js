@@ -15,6 +15,7 @@ MyApp.controller('ToggleController', function($scope) {
 
 MyApp.directive('myToggle', function() {
   return {
+    scope: {},
     templateUrl: 'mytoggle-template.html',
     controller: 'ToggleController'
   };
@@ -31,6 +32,7 @@ MyApp.controller('RangeController', function($scope) {
 
 MyApp.directive('myRange', function() {
   return {
+    scope: {},
     templateUrl: 'myrange-template.html',
     controller: 'RangeController'
   };
